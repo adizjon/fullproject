@@ -14,7 +14,7 @@ const ExcelDownloadButton = () => {
             })
             .catch(error => {
                 // Handle error, e.g., show a notification to the user
-                console.error('Error downloading Excel file:', error);
+                alert('Error downloading Excel file:', error)
             });
     };
 

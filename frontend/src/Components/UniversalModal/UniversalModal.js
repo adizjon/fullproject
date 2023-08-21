@@ -5,10 +5,8 @@ import {connect} from "react-redux";
 
 function UniversalModal({visible, inputs, setVisible, buttons, yandexMap, width, height, saveButton, isEdit, editButton, data}) {
 
-    // console.log(inputs)
 
     function drawInput(element, index) {
-        // console.log(element)
         switch (element.type) {
             case "text":
                 return <input
@@ -26,8 +24,6 @@ function UniversalModal({visible, inputs, setVisible, buttons, yandexMap, width,
                     type={element.type}
                     onChange={element.action}/>
             case "select":
-                // console.log("render",element.render[0])
-                // console.log(element.title)
                 return <select className={"form-control my-2"} onChange={element.action} key={index} value={element.value}>
                     <option value="">select</option>
                     {element.render.map((item, i)=> {

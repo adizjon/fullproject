@@ -28,7 +28,7 @@ const ExcelButton = (props) => {
             a.click();
             window.URL.revokeObjectURL(url);
         } catch (error) {
-            console.error('Error downloading Excel file:', error);
+            alert('Error downloading Excel file:', error)
         }
     };
 

@@ -61,6 +61,7 @@ const Table = ({
                 page: currentPage,
             });
         }
+
     }, [dataProps]);
 
 
@@ -90,7 +91,6 @@ const Table = ({
 
     // function hide(index) {
     //   columns[index].show = !columns[index].show
-    //   console.log(columns);
     // }
 
     function checkColumns(name) {
@@ -101,12 +101,11 @@ const Table = ({
     return (
         <div className="universal_table">
             {/* 👇 Pagination Per Page Changing Select 👇  */}
-            {/*{console.log(data)}*/}
 
 
 
 
-            <Rodal visible={isOpen} onClose={()=>{setIsOpen(false)}}>
+            <Rodal height={500} visible={isOpen} onClose={()=>{setIsOpen(false)}}>
                 <div className={"relative h-full"}>
                     <DragDropContext onDragEnd={handleDragEnd}>
                         <Droppable droppableId="columnList" direction="vertical">
@@ -144,7 +143,7 @@ const Table = ({
                             )}
                         </Droppable>
                     </DragDropContext>
-                    <button className={"bg-green-500 bottom-0 left-0 absolute px-3 py-2 rounded shadow text-white mt-3"} onClick={saveColumnOrder} >save</button>
+                    <button className={"bg-green-500 bottom-0 left-0 absolute px-3 py-2 rounded shadow text-white mt-3"} onClick={()=>saveColumnOrder(setIsOpen(false))} >save</button>
                 </div>
             </Rodal>
 
@@ -185,18 +184,6 @@ const Table = ({
 
                     {/* 👇 Table Setup 👇  */}
                     <div className='relative flex justify-end flex-col'>
-                        {/*<button className='px-3 py-2 bg-white border border-blue-700  rounded-xl' onClick={()=>setShowHide(!showHide)}>show/hide columns</button>*/}
-                        {/*{showHide?*/}
-                        {/*    <ul style={{position:"absolute",top:"62px"}} className='rounded-xl overflow-hidden box-border absolute border-1 w-full text-blue-700 border border-blue-700 flex flex-col'>*/}
-                        {/*        {*/}
-                        {/*            columns.map((column, index)=>(*/}
-                        {/*                <li onClick={()=>hideColumn(index)} className={'px-2 py-1 '+ (checkColumns(column.title)?'bg-white hover:bg-slate-100':'bg-blue-700 text-white hover:bg-blue-800')} key={column.key}>{column.title.toLowerCase()}</li>*/}
-                        {/*            ))*/}
-
-                        {/*        }*/}
-                        {/*    </ul>*/}
-                        {/*    :*/}
-                        {/*    ""}*/}
                         <PopupState variant="popper" popupId="demo-popup-popper" disableAutoFocus="">
                             {(popupState) => (
                                 <div>
@@ -233,22 +220,22 @@ const Table = ({
                         {/*</button>*/}
                         <ExcelButton url={`http://localhost:8080/api/territory/excel?page=${currentPage}&size=${sizeOfPage}`} />
                         {/* 👇 Hide / Show Columns 👇  */}
-                        <label style={{ width: "200px" }}>
-                            <span>Table Setup</span>
-                            <Select
-                                isMulti
-                                name="columns"
-                                options={columns.map((item) => ({
-                                    label: item.title,
-                                    value: item.id,
-                                }))}
-                                onChange={(state, action) =>
-                                    filterVisibility({ selectedItem: state, action })
-                                }
-                                className="basic-multi-select"
-                                classNamePrefix="select"
-                            />
-                        </label>
+                        {/*<label style={{ width: "200px" }}>*/}
+                        {/*    <span>Table Setup</span>*/}
+                        {/*    <Select*/}
+                        {/*        isMulti*/}
+                        {/*        name="columns"*/}
+                        {/*        options={columns.map((item) => ({*/}
+                        {/*            label: item.title,*/}
+                        {/*            value: item.id,*/}
+                        {/*        }))}*/}
+                        {/*        onChange={(state, action) =>*/}
+                        {/*            filterVisibility({ selectedItem: state, action })*/}
+                        {/*        }*/}
+                        {/*        className="basic-multi-select"*/}
+                        {/*        classNamePrefix="select"*/}
+                        {/*    />*/}
+                        {/*</label>*/}
 
                         {/* 👇 Column Order 👇  */}
                         {columnOrderMode && columns.length ? (

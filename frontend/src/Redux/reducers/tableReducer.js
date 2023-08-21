@@ -97,7 +97,9 @@ const tableReducer = createSlice({
     },
     saveColumnOrder: (state, action) => {
       state.columns = state.modalColumns;
-    },reorderColumns: (state, action) => {
+      localStorage.setItem(("orderColumns"+location.pathname), JSON.stringify(state.columns))
+    },
+    reorderColumns: (state, action) => {
       const { sourceIndex, destinationIndex } = action.payload;
 
       const updatedColumns = [...state.modalColumns];

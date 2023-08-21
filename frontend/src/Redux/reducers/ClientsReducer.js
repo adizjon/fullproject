@@ -7,7 +7,8 @@ const clientsReducer = createSlice({
 
     initialState: {
         data: [],
-        columns: [
+        columns: localStorage.getItem(("orderColumns"+location.pathname))?JSON.parse(localStorage.getItem(("orderColumns"+location.pathname))):
+            [
             {
                 id: 1,
                 title: "",

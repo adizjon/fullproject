@@ -14,6 +14,7 @@ import Client from "./Components/Client/Client";
 import CustomerCategory from "./Components/CustomerCategory/CustomerCategory";
 import ClientMap from "./Components/ClientMap/clientMap";
 import Hello from "./Components/UniversalFilter/Hello";
+import CompanyProfile from "./CompanyProfile/CompanyProfile";
 
 function App() {
     const [data, setData] = useState([]);
@@ -140,6 +141,7 @@ function App() {
                 <Route path={"/admin/map"} element={<ClientMap/>}/>
                 <Route path={"/admin/settings"} element={<SettingPanel/>}>
                     <Route path={"/admin/settings/territory"} element={<Territory/>}/>
+                    <Route path={"/admin/settings/companyProfile"} element={<CompanyProfile/>}/>
 
                     <Route path={"/admin/settings/customerCategory"} element={<CustomerCategory/>}/>
 

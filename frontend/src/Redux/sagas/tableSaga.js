@@ -16,6 +16,7 @@ function* changeSizeOfPage(action) {
             size: LIMIT
         },
     });
+
 }
 
 function downloadExcelFile(action) {

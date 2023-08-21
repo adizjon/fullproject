@@ -44,6 +44,7 @@ function* editClientSaga(action) {
             method: "GET",
             param:action.payload
         });
+        action.payload=""
         yield call(getClientsSaga);
 
     } catch (error) {

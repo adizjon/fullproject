@@ -104,6 +104,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+
 }
 
 .img-container img {
@@ -115,4 +116,11 @@
 /*    margin-top: 5px;*/
 /*    !* Add any other styles you want for the text container *!*/
 /*}*/
+#clientDatasBox{
+    position: absolute;
+    left: 110px;
+    top: 400px;
+    background: #0A819C;
+    z-index: 1000;
+}
 

@@ -148,7 +148,6 @@ function Index(props) {
 
     }
 
-    console.log(territoryObj)
 
     return (
         <div>

@@ -33,7 +33,6 @@ function UniversalFilter(props) {
         if (param.name === "active") {
             active=param.value.value
             // param.value.map(item => {
-            //     console.log(item.value)
             // })
         }
         if (param.name === "tin") {

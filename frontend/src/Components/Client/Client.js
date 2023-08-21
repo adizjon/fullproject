@@ -387,7 +387,7 @@ function Client(props) {
                                 changeSizeModeOptions={[5, 10, 20, 30, 40, 50]}
                                 editingButton={(item) => editFunction(item)}
                                 // editingButton={}
-
+                                setIs
                             />
 
                         </div>
